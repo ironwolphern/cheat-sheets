@@ -1,0 +1,165 @@
+site_name: Ironwolphern CheatSheets
+site_url: https://ironwolphern.github.io/cheat-sheets/
+site_description: Cheat Sheets for Cloud, Containers, Devops, Infra, Networking, Security, Storage, and Tools.
+site_author: Ironwolphern
+
+repo_url: https://github.com/ironwolphern/cheat-sheets
+repo_name: ironwolphern/cheat-sheets
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  logo: assets/logo-big.png
+  favicon: assets/favicon.ico
+  features:
+    - announce.dismiss
+    #- content.action.edit
+    #- content.action.view
+    - content.code.annotate
+    - content.code.copy
+    - content.tooltips
+    - header.autohide
+    - search.highlight
+    - search.suggest
+    - search.share
+    - navigation.footer
+    - navigation.tabs
+    - navigation.indexes
+    #- navigation.sections
+    #- navigation.path
+    - navigation.top
+    #- navigation.tracking
+    - toc.follow
+    #- toc.integrate
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/link
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: cyan
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: cyan
+      toggle:
+        icon: material/toggle-switch-off
+        name: Switch to system preference
+
+plugins:
+#  - blog
+  - search:
+      separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+
+extra:
+  status:
+    new: Recently added
+    deprecated: Deprecated
+  generator: false
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/ironwolphern
+    - icon: fontawesome/brands/linkedin
+      link: https://es.linkedin.com/in/fernando-hern%C3%A1ndez-san-felipe-b3338686
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      normalize_issue_symbols: true
+      repo_url_shorthand: true
+      user: squidfunk
+      repo: mkdocs-material
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets:
+      auto_append:
+        - includes/mkdocs.md
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+      combine_header_slug: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+copyright: Copyright &copy; 2024 Ironwolphern
+
+not_in_nav: |
+  /containers/**/*.md
+  /infra/**/*.md
+  /networking/**/*.md
+  /security/**/*.md
+  /storage/**/*.md
+  /tools/**/*.md
+
+nav:
+  - Home: index.md
+  - Cloud:
+    - cloud/index.md
+    - AWS: cloud/aws.md
+    - Azure: cloud/azure.md
+    - GCP: cloud/gcp.md
+  #- Containers:
+    #- containers/index.md
+    #- Docker: containers/docker.md
+    #- Helm: containers/helm.md
+    #- OpenShift:
+      #- containers/openshift/index.md
+      #- OpenShift CLI: containers/openshift/oc.md
+    #- Kubernetes:
+      #- containers/kubernetes/index.md
+      #- Kubectl: containers/kubernetes/kubectl.md
+  - Devops:
+    - devops/index.md
+    - Git: devops/git.md
+    - Packer: devops/packer.md
+    - Terraform: devops/terraform-cli.md
+    - Vagrant: devops/vagrant.md
+    - Vault: devops/vault.md
+  #- Infra:
+    #- infra/index.md
+    #- Proxmox: infra/proxmox.md
+  #- Networking:
+    #- networking/index.md
+  #- Security:
+    #- security/index.md
+    #- OpenSSL: security/openssl.md
+  #- Storage:
+    #- storage/index.md
+  #- Tools:
+    #- tools/index.md
+    #- 1Password: tools/1password.md
